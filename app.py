@@ -11,17 +11,15 @@ produto = [
 
 @app.route('/')
 def index():  
-    return render_template(
-        'index.html',
-        titulo = 'Produtos',
-        produto = produto
-        )
+    return render_template('index.html', titulo = 'Produtos',
+    produto = produto)
+
 @app.route('/prod/<int:id>')
 def produtos(id):
     prod = produto[id]
     return render_template(
         'produtos.html',
-        produto = prod
-    )
+        produto = prod)
+
 if __name__ == '__main__':
     app.run()
